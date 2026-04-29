@@ -54,11 +54,11 @@ Imagine one specific row in our warehouse. We decide to add a strict rule: boxes
 **The Disadvantage:** Space is limited. You can’t store a massive, growing list of items here. If you try to put too much in, you get the famous Stack Overflow.
 
 ### The Heap: The Open Floor
-When data is too big or its size is unpredictable, we use the Heap. Think of this as the wide open floor of the warehouse. We find a big enough empty space, dump our data there, and then—this is the key—we write down the address of that floor space on a small sticky note.
+When data is too big or its size is unpredictable, we use the Heap. Think of this as the wide open floor of the warehouse. We find a big enough empty space, dump our data there, and then this is the key we write down the address of that floor space on a small sticky note.
 
 We put that sticky note on the Stack. Why there? Because the stack guarantees cleanup order. When the sticky note goes out of scope, the warehouse floor data may linger until the garbage collector (or ARC in Swift) finally bulldozes it.
 
-(In Swift, the heap uses reference counting—when the last sticky note is gone, the data self destructs. No garbage collector needed. In Java/C#, a cleaner comes by later.)
+(In Swift, the heap uses reference counting when the last sticky note is gone, the data self destructs. No garbage collector needed. In Java/C#, a cleaner comes by later.)
 
 ## Connecting the Dots
 Now you can see the "Magic" revealed:
@@ -70,7 +70,7 @@ Now you can see the "Magic" revealed:
 ## Can we create our own?
 In standard Swift, C#, or Java? No. Those keywords are baked into the language spec. You can't invent a new storage technique because the compiler wouldn't know how to translate it into machine code.
 
-But if you're writing your own compiler? Then yes—you're the architect of the warehouse. You decide exactly how the 1s and 0s are organized.
+But if you're writing your own compiler? Then yes you're the architect of the warehouse. You decide exactly how the 1s and 0s are organized.
 
 ## Conclusion
 Value and Reference types aren't arbitrary rules to make your life difficult. They're a deliberate balance between speed (stack) and flexibility (heap). Next time a class property changes behind your back? You're just looking at the same floor space in the warehouse.
