@@ -4,9 +4,9 @@ Regardless of which programming language you call home, you’ve likely bumped i
 ## The Surface Difference: To Copy or to Share?
 The first thing that comes to mind is how they behave when you assign one property to another property.
 
-When you assign or pass a **Value Type** to a new variable, the data is physically duplicated. Both variables get their own unique version of the data. They are independent; if you change one, the other doesn't even flinch.
+When you assign or pass a **Value Type** to a new variable, the data is physically duplicated. Both variables get their own unique version of the data. They are independent, if you change one, the other doesn't even flinch.
 
-However, in a **Reference Type**, you aren't copying the data itself; you are just sharing the address (the "map") to where that data lives. If you change a property in one, you're changing the actual object that both variables are pointing to.
+However, in a **Reference Type**, you aren't copying the data itself, you are just sharing the address (the "map") to where that data lives. If you change a property in one, you're changing the actual object that both variables are pointing to.
 
 ```swift
 // Example in Swift (Applicable to most C-style languages)
@@ -44,7 +44,7 @@ You might wonder: Who decided that a struct is a value type and a class is a ref
 The answer lies with the **Compiler**. The creators of your programming language wrote the logic that tells the machine how to store and copy these specific keywords. If you were building your own language from scratch, you could absolutely decide that a class should be a value type. But in existing languages, these behaviors are hardcoded for efficiency. Some languages give you escape hatches (like C#’s ref struct), but those are exceptions that prove the rule—they still operate under the hood with stack vs. heap rules.
 
 ## Enter the Warehouse: Stack vs. Heap
-To understand this, we have to look at the machine. Your computer doesn't know what a "class" is; it only knows 1s and 0s. Imagine your memory as a giant warehouse full of empty slots.
+To understand this, we have to look at the machine. Your computer doesn't know what a "class" is, it only knows 1s and 0s. Imagine your memory as a giant warehouse full of empty slots.
 
 ### The Stack: The Organized Row
 Imagine one specific row in our warehouse. We decide to add a strict rule: boxes must be added from the top and taken out from the top (LIFO - Last In, First Out).
