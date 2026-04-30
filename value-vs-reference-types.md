@@ -8,7 +8,7 @@ The first difference between **Value Types** and **Reference Types** that comes 
 
 When you copy a **Value Type**, the data is physically duplicated from one variable to another. Both of them will have their own independent copy of the value, meaning each one can do whatever it wants without affecting the other.
 
-With a **Reference Type**, it's a different story. When you copy a **Reference Type** you only copy the address, where the data is actualy stored, between the two variables. So when you make a change through one of them, that change shows up in the other one too. End of the day they only have one data to work with.
+With a **Reference Type**, it's a different story. When you copy a **Reference Type** you only copy the address (the "map"), where the data is actualy stored, between the two variables. So when you make a change through one of them, that change shows up in the other one too. End of the day they only have one data to work with.
 
 Let's see this in code:
 
